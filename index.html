@@ -9,7 +9,6 @@
       function loadOptimizely() {
         if (document.querySelector('script[src*="cdn.optimizely.com"]')) return;
         var script = document.createElement("script");
-        script.src = "https://cdn.optimizely.com/js/6510339643146240.js";
         script.onload = function () {
           window["optimizely"] = window["optimizely"] || [];
           window["optimizely"].push({ type: "activate" });

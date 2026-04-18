@@ -16,8 +16,9 @@ function CookieBanner() {
   const handleAccept = (type) => {
     setSettling(true);
     document.cookie = `pictet_cookie_consent=${type}; path=/; max-age=${365 * 24 * 60 * 60}; SameSite=Lax`;
-    if (type === 'all' && window.loadOptimizely) {
-      window.loadOptimizely();
+    if (type === 'all') {
+      setTimeout(() => window.location.reload(), 300);
+      return;
     }
     setTimeout(() => setVisible(false), 300);
   };
