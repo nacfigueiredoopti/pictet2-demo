@@ -1,0 +1,130 @@
+.keyfacts {
+  padding: 120px 40px;
+  background: var(--color-white);
+}
+
+.keyfacts__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.keyfacts__left {
+  position: sticky;
+  top: 120px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.keyfacts--visible .keyfacts__left {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.keyfacts__eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-brown);
+  margin-bottom: 16px;
+}
+
+.keyfacts__title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 36px);
+  font-weight: 400;
+  color: var(--color-brown-dark);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.keyfacts__description {
+  font-size: 16px;
+  color: var(--color-gray);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.keyfacts__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-brown);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: gap 0.3s;
+}
+
+.keyfacts__link:hover {
+  gap: 14px;
+}
+
+.keyfacts__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.keyfact {
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--color-cream);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay);
+}
+
+.keyfacts--visible .keyfact {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.keyfact:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(121, 76, 66, 0.08);
+}
+
+.keyfact__number {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  color: var(--color-brown);
+  line-height: 1;
+}
+
+.keyfact__label {
+  font-size: 14px;
+  color: var(--color-gray);
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .keyfacts__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .keyfacts__left {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .keyfacts {
+    padding: 80px 20px;
+  }
+
+  .keyfacts__grid {
+    grid-template-columns: 1fr;
+  }
+}
