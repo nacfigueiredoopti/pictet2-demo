@@ -7,7 +7,7 @@ redirects = []
 [functions."*"]
 
 [build]
-publish = "/Users/nunofigueiredo/Documents/demos/pictet/dist"
+publish = "/Users/nunofigueiredo/Documents/demos/pictet2/dist"
 publishOrigin = "ui"
 commandOrigin = "ui"
 command = "npm run build"

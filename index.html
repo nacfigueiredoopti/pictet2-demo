@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pictet Group | Wealth & Asset Management</title>
     <script>
-      window["optimizely"] = window["optimizely"] || [];
-      window["optimizely"].push({ type: "holdEvents" });
-    </script>
-    <script src="https://cdn.optimizely.com/js/6247781531123712.js"></script>
-    <script>
+      function loadOptimizely() {
+        if (document.querySelector('script[src*="cdn.optimizely.com"]')) return;
+        var script = document.createElement("script");
+        script.src = "https://cdn.optimizely.com/js/6510339643146240.js";
+        script.onload = function () {
+          window["optimizely"] = window["optimizely"] || [];
+          window["optimizely"].push({ type: "activate" });
+        };
+        document.head.appendChild(script);
+      }
       if (document.cookie.indexOf("pictet_cookie_consent=all") !== -1) {
-        window["optimizely"].push({ type: "sendEvents" });
+        loadOptimizely();
       }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
